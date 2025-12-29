@@ -1,0 +1,91 @@
+:root {
+    --fonte: "BBH Bogle";
+    --fonte2: "Montserrat";
+    --preto: rgb(97, 81, 81);
+}
+body{
+    color: var(--preto);
+}
+
+.tit{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    margin: 0,5em 0;
+    font-family: var(--fonte), sans-serif;
+}
+
+h2{
+    font-family: var(--fonte), sans-serif;
+}
+.opcoes{
+    font-size: 15px;
+    margin-top: 0.5em;
+}
+
+fieldset{
+    border: solid var(--preto);
+    color: var(--preto);
+    font-family: var(--fonte2);
+    font-size: 12px;
+    margin-bottom:1em;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.125em
+}
+.nivel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+input[type="text"]{
+    width: 100%;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+}
+.submit-t{
+    font-family: var(--fonte);
+    width: 45%;
+    border:solid var(--preto);
+    margin: 0.25em 0;
+}
+.questoes-grade{
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+    align-items: center;
+}
+.questoes-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin: 1em;
+}
+@media screen and (min-width: 1024px){
+   body{
+    display: flex;
+    justify-content: center;
+   }
+    .formulario{
+        width: 50%;
+    }
+    legend{
+        font-size: 15px;
+    }
+    h1{
+        font-size: 50px;
+    }
+}
