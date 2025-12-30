@@ -91,20 +91,21 @@ document.getElementById("form-questoes").addEventListener("submit", function (e)
 
     const dadosquestao = [];
 
-    for (let j = 1; j <= total; j++) {
+    for (let T =  numinicio, j = numfim ; T <= j; T++) {
 
-        const marcada = document.querySelector(`input[name="q${j}"]:checked`);
+        const marcada = document.querySelector(`input[name="q${T}"]:checked`);
         const respostaUsuario = marcada ? marcada.value : "-";
-        const correta = dados.gabarito[j - 1];
+        const correta = dados.gabarito[T - 1];
 
         dadosquestao.push({
-            questao: j,
+            questao: T,
             marcada: respostaUsuario,
             correta: correta,
             resultado: respostaUsuario === correta ? "V" : "F"
         });
        
     }
+
     const nome = `${dados.data} - ${dados.materia} ${dados.lista}.txt`
     const textofeito = gerarTexto(dados, dadosquestao);
     baixarTXT(textofeito,nome);
