@@ -91,11 +91,11 @@ document.getElementById("form-questoes").addEventListener("submit", function (e)
 
     const dadosquestao = [];
 
-    for (let T =  numinicio, j = numfim ; T <= j; T++) {
+    for (let T =  numinicio,i = 1 , j = numfim ; T <= j; T++, i++) {
 
         const marcada = document.querySelector(`input[name="q${T}"]:checked`);
         const respostaUsuario = marcada ? marcada.value : "-";
-        const correta = dados.gabarito[T - 1];
+        const correta = dados.gabarito[i - 1];
 
         dadosquestao.push({
             questao: T,
