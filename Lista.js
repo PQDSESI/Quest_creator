@@ -58,6 +58,7 @@ function gerarTexto(dados, dadosquestao) {
     texto += `Lista: ${dados.lista}\n`;
     texto += `Tipo: ${dados.tipoLista}\n`;
     texto += `Data: ${dados.data}\n\n`;
+    texto += `Nível: ${dados.nivel}\n\n`;
 
     texto += "QUESTÕES\n";
     texto += "--------------------------------\n";
@@ -106,7 +107,7 @@ document.getElementById("form-questoes").addEventListener("submit", function (e)
        
     }
 
-    const nome = `${dados.data} - ${dados.materia} ${dados.lista}.txt`
+    const nome = `${dados.data} - (${dados.nivel}) ${dados.materia} ${dados.lista}.txt`
     const textofeito = gerarTexto(dados, dadosquestao);
     baixarTXT(textofeito,nome);
 });
