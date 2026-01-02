@@ -9,8 +9,8 @@ document.getElementById("infoLista").innerText =
     `${dados.materia} - ${dados.lista} - ${dados.tipoLista} - ${dados.nivel}`;
 
     const container = document.getElementById("questoes-container");
-    const numinicio = dados.inicio;
-    const numfim = dados.fim;
+    const numinicio = Number(dados.inicio);
+    const numfim = Number(dados.fim);
 
     const total = Number(numfim - numinicio +1);
 
