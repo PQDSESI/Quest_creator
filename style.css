@@ -25,6 +25,42 @@ h2{
     margin-top: 0.5em;
 }
 
+.gabarito-box{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.gabarito-box p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.opcoes input{
+    appearance: none; /* Remove aparência padrão */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 4px; /* Bordas levemente arredondadas (0 para quadrado perfeito) */
+    background-color: #fff; 
+}
+.opcoes input:checked {
+    background-color: black;
+}
+
+
+.gabarito-box button{
+border:  2px solid  var(--preto);
+
+}
+
+.gabarito-box button:hover{
+    background-color: var(--preto);
+}
+
 fieldset{
     border: solid var(--preto);
     color: var(--preto);
