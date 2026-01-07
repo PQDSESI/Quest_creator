@@ -42,6 +42,9 @@ document.getElementById("infoLista").innerText =
                 <input id="${i}" type="radio"  name="q${i}" value="E"> E
             </label>
             </div>
+            <div class="banner-questoes"><p id="B-${i}"></p></div>
+
+
         `;
     
         container.appendChild(bloco);
@@ -148,7 +151,18 @@ const inputs = document.querySelectorAll('[type="radio"]');
 inputs.forEach(input => {
     input.addEventListener("click", function () {
         const id = this.id;
-       PutText(id)
-
+        PutText(id)
+       const GabaritoDaMarcada=  dados.gabarito[id - numinicio]
+       const selecionada = document.querySelector(`input[name="q${id}"]:checked`).value;
+       let result
+       const box =  document.getElementById(`B-${id}`)
+if (GabaritoDaMarcada === selecionada) {
+   box.setAttribute("class", "certa");
+   box.textContent = `Você acertou, a resposta era ${GabaritoDaMarcada}`;
+} else {
+    box.setAttribute("class", "errada");
+    box.textContent = `Você errou, a resposta era ${GabaritoDaMarcada} ` ;
+}
     });
 });
+

@@ -2,6 +2,8 @@
     --fonte: "BBH Bogle";
     --fonte2: "Montserrat";
     --preto: rgb(97, 81, 81);
+    --verde: rgb(38, 159, 4);
+    --vermelho: rgb(190, 20, 20);
 }
 body{
     color: var(--preto);
@@ -31,6 +33,13 @@ h2{
     gap: 2em;
 }
 
+.certa{
+    background-color: var(--verde); 
+}
+.errada{
+    background-color: var(--vermelho);
+}
+
 .gabarito-box p {
     font-size: 20px;
     font-weight: 700;
@@ -51,6 +60,20 @@ h2{
     background-color: black;
 }
 
+.banner-questoes{
+    display: flex;
+    justify-content: center;
+}
+
+.banner-questoes p {
+    display: inline-block;
+    font-family: var(--fonte2), sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+}
 
 .gabarito-box button{
 border:  2px solid  var(--preto);
