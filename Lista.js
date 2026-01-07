@@ -23,23 +23,23 @@ document.getElementById("infoLista").innerText =
             <strong>Questão ${i}</strong><br>
             <div class="opcoes">
             <label>
-                <input type="radio"  name="q${i}" value="A"> A
+                <input  id="${i}" type="radio"   name="q${i}" value="A"> A
             </label>
     
             <label>
-                <input type="radio" name="q${i}" value="B"> B
+                <input id="${i}" type="radio" name="q${i}" value="B"> B
             </label>
     
             <label>
-                <input type="radio" name="q${i}" value="C"> C
+                <input id="${i}" type="radio"  name="q${i}" value="C"> C
             </label>
     
             <label>
-                <input type="radio" name="q${i}" value="D"> D
+                <input id="${i}" type="radio"  name="q${i}" value="D"> D
             </label>
     
             <label>
-                <input type="radio" name="q${i}" value="E"> E
+                <input id="${i}" type="radio"  name="q${i}" value="E"> E
             </label>
             </div>
         `;
@@ -112,3 +112,43 @@ document.getElementById("form-questoes").addEventListener("submit", function (e)
     baixarTXT(textofeito,nome);
 });
 
+const Passa = document.getElementById("PassaGabarito");
+const Volta = document.getElementById("VoltaGabarito");
+const Titulo = document.getElementById("NmrDaQuestaoTitulo");
+const TamanhoDoGabarito = dados.gabarito.length;
+let Numerodaquestão = numinicio ;
+
+const PutText = (NumeroQ) => {
+    document.getElementById("gabarito-content").textContent=`${dados.gabarito[NumeroQ - numinicio]}`;
+    Titulo.textContent=` ${NumeroQ}`
+}
+
+PutText(Numerodaquestão)
+
+Passa.onclick = () => {
+    if (Numerodaquestão - numinicio +1 < TamanhoDoGabarito) {
+        Numerodaquestão++
+    } else {
+        Numerodaquestão = numinicio
+    }
+    PutText(Numerodaquestão)
+}
+
+Volta.onclick = () => {
+    if (Numerodaquestão > numinicio) {
+        Numerodaquestão--
+    } else {
+        Numerodaquestão =  numinicio + TamanhoDoGabarito -1
+    }
+    PutText(Numerodaquestão);
+};
+
+const inputs = document.querySelectorAll('[type="radio"]');
+
+inputs.forEach(input => {
+    input.addEventListener("click", function () {
+        const id = this.id;
+       PutText(id)
+
+    });
+});
