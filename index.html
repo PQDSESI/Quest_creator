@@ -1,99 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-    <head>
-        <link rel="stylesheet" href="./reset.css">
-        <link rel="stylesheet" href="./style.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Prompt de questões</title>
-        <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <section class="formulario">
-        <h1> FORMULÁRIO DE QUESTÕES </h1>
-        <section>
-<form id="form-descricao">
-    
-    <fieldset>
-        <legend>Matéria</legend>
+  <head>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt de questões</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="formulario">
+      <h1>FORMULÁRIO DE QUESTÕES</h1>
+      <section>
+        <form id="form-descricao">
+          <fieldset>
+            <legend>Matéria</legend>
 
-        <input type="radio" id="mat" name="subject" value="Matemática" required>
-        <label for="mat">Matemática</label><br>
+            <input
+              type="radio"
+              id="mat"
+              name="subject"
+              value="Matemática"
+              required
+            />
+            <label for="mat">Matemática</label><br />
 
-        <input type="radio" id="fis" name="subject" value="Física">
-        <label for="fis">Física</label><br>
+            <input type="radio" id="fis" name="subject" value="Física" />
+            <label for="fis">Física</label><br />
 
-        <input type="radio" id="pt" name="subject" value="Português">
-        <label for="pt">Português</label><br>
-        
-        <input type="radio" id="ig" name="subject" value="Inglês">
-        <label for="ig">Inglês</label>
-    </fieldset>
+            <input type="radio" id="pt" name="subject" value="Português" />
+            <label for="pt">Português</label><br />
 
-    <fieldset>
-        <legend>Descrição da Lista</legend>
-        <div class="container">
-        
-        <label for="detail">Lista:</label>
-        <input id="detail" name="lista" type="text" required><br><br>
+            <input type="radio" id="ig" name="subject" value="Inglês" />
+            <label for="ig">Inglês</label>
+          </fieldset>
 
-        <label for="data">Data:</label>
-        <input id="data" name="data" type="date" required><br><br>
-    
-        <label for="typels">Tipo de lista:</label> 
-        <input class="type-of-list"  list="listtype" id="typels" name="tipoLista" required>
+          <fieldset>
+            <legend>Descrição da Lista</legend>
+            <div class="container">
+              <label for="detail">Lista:</label>
+              <input
+                id="detail"
+                name="lista"
+                type="text"
+                required
+              /><br /><br />
 
-        <datalist id="listtype">
-            <option value="Mentoria">
-                <option value="Avulsa">
-                    <option value="Livro">
-                        <option value="Simulado">
-        </datalist>
-        <p>Nível: </p>
-<div class="nivel">
-        <label for="nivel1">1</label>
-        <input id="level" type="radio" name="nivel" value="1" required>
+              <label for="data">Data:</label>
+              <input id="data" name="data" type="date" required /><br /><br />
 
-        <label for="nivel2">2</label>
-        <input id="level" type="radio" name="nivel" value="2"required>
+              <label for="typels">Tipo de lista:</label>
+              <input
+                class="type-of-list"
+                list="listtype"
+                id="typels"
+                name="tipoLista"
+                required
+              />
 
-        <label for="nivel3">3</label>
-        <input id="level" type="radio" name="nivel" value="3" required>
+              <datalist id="listtype">
+                <option value="Mentoria"></option>
+                <option value="Avulsa"></option>
+                <option value="Livro"></option>
+                <option value="Simulado"></option>
+              </datalist>
+              <p>Nível:</p>
+              <div class="nivel">
+                <label for="nivel1">1</label>
+                <input
+                  id="level"
+                  type="radio"
+                  name="nivel"
+                  value="1"
+                  required
+                />
 
-        <label for="nivel4">4</label>
-        <input id="level" type="radio" name="nivel" value="4" required>
-        
-    </div>   
-    </div>
-    </fieldset>
-    <fieldset>
+                <label for="nivel2">2</label>
+                <input
+                  id="level"
+                  type="radio"
+                  name="nivel"
+                  value="2"
+                  required
+                />
 
-        <legend>Gabarito</legend>
+                <label for="nivel3">3</label>
+                <input
+                  id="level"
+                  type="radio"
+                  name="nivel"
+                  value="3"
+                  required
+                />
 
-        <input type="text" id="gabarito" placeholder="Escreva o gabarito do jeito A-B-C-D-E...">
+                <label for="nivel4">4</label>
+                <input
+                  id="level"
+                  type="radio"
+                  name="nivel"
+                  value="4"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Gabarito</legend>
 
-    </fieldset>
+            <input
+              type="text"
+              id="gabarito"
+              placeholder="Escreva o gabarito do jeito A-B-C-D-E..."
+            />
+          </fieldset>
 
-    <fieldset>
-<legend>limites de questão</legend>
+          <fieldset>
+            <legend>limites de questão</legend>
 
-<label>inicio</label>
-<input name="questaoinicio" id="questaoinicio" type="number">
+            <label>inicio</label>
+            <input name="questaoinicio" id="questaoinicio" type="number" />
 
-<label>fim</label>
-<input name="questaofim" id="questaofim" type="number">
-    </fieldset>
+            <label>fim</label>
+            <input name="questaofim" id="questaofim" type="number" />
+          </fieldset>
 
-<div class="submit">
-    <button class="submit-t" type="submit">Enviar</button>
-    </div>
-
-</form>
-</section>
-</section>
-<script src="./Prompt.js"></script>
-</body>
+          <div class="submit">
+            <button class="submit-t" type="submit">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </section>
+    <script src="./Prompt.js"></script>
+  </body>
 </html>
