@@ -20,30 +20,49 @@ for (let i = numinicio, j = numfim; i <= j; i++) {
 
   bloco.innerHTML = `
             <strong>Questão ${i}</strong><br>
+            <div class="opcoesecontainer">
             <div class="opcoes">
-            <label>
-                <input  id="${i}" type="radio"   name="q${i}" value="A"> A
+
+            <div class="vazio-box">
+            <label class="containerdeopcaoetitulo">
+                <input  id="A-${i}" type="radio"   name="q${i}" value="A"> A
             </label>
-    
-            <label>
-                <input id="${i}" type="radio" name="q${i}" value="B"> B
-            </label>
-    
-            <label>
-                <input id="${i}" type="radio"  name="q${i}" value="C"> C
-            </label>
-    
-            <label>
-                <input id="${i}" type="radio"  name="q${i}" value="D"> D
-            </label>
-    
-            <label>
-                <input id="${i}" type="radio"  name="q${i}" value="E"> E
-            </label>
+            <input id="NA-${i}" type="checkbox" class="apagaopcao">
             </div>
-            <div class="banner-questoes"><p id="B-${i}"></p></div>
 
+            <div class="vazio-box">
+            <label class="containerdeopcaoetitulo">
+                <input id="B-${i}" type="radio" name="q${i}" value="B"> B
+            </label>
+            <input id="NB-${i}" type="checkbox" class="apagaopcao">
+            </div>
 
+            <div class="vazio-box">
+            <label class="containerdeopcaoetitulo">
+                <input id="C-${i}" type="radio"  name="q${i}" value="C"> C
+            </label>
+            <input id="NC-${i}" type="checkbox" class="apagaopcao">
+            </div>
+
+            <div class="vazio-box">
+            <label class="containerdeopcaoetitulo">
+                <input id="D-${i}" type="radio"  name="q${i}" value="D"> D
+            </label>
+            <input id="ND-${i}" type="checkbox" class="apagaopcao">
+            </div>
+
+            <div class="vazio-box">
+            <label class="containerdeopcaoetitulo">
+                <input id="E-${i}" type="radio"  name="q${i}" value="E"> E
+            </label>
+            <input id="NE-${i}" type="checkbox" class="apagaopcao">
+            </div>
+
+            </div>
+            <div class="banner-questoes"><p id="T-${i}"></p></div>
+            </div>
+
+    
         `;
 
   container.appendChild(bloco);
@@ -149,20 +168,39 @@ const inputs = document.querySelectorAll('[type="radio"]');
 
 inputs.forEach((input) => {
   input.addEventListener("click", function () {
-    const id = this.id;
-    PutText(id);
-    const GabaritoDaMarcada = dados.gabarito[id - numinicio];
+    idModificado = this.id.split("-");
+    NumeroId = Number(idModificado[1]);
+    PutText(NumeroId);
+    const GabaritoDaMarcada = dados.gabarito[NumeroId - numinicio];
     const selecionada = document.querySelector(
-      `input[name="q${id}"]:checked`
+      `input[name="q${NumeroId}"]:checked`
     ).value;
-    let result;
-    const box = document.getElementById(`B-${id}`);
+    const box = document.getElementById(`T-${NumeroId}`);
+    console.log(box);
     if (GabaritoDaMarcada === selecionada) {
       box.setAttribute("class", "certa");
       box.textContent = `Você acertou, a resposta era ${GabaritoDaMarcada}`;
     } else {
       box.setAttribute("class", "errada");
       box.textContent = `Você errou, a resposta era ${GabaritoDaMarcada} `;
+    }
+  });
+});
+
+const NInputs = document.querySelectorAll('input[type="checkbox"]');
+NInputs.forEach((NInput) => {
+  NInput.addEventListener("change", function () {
+    const ID = this.id.replace("N", "");
+    const ReferenciaDaOpcao = document.querySelector(
+      `input[type="radio"]#${ID}`
+    );
+
+    if (this.checked) {
+      ReferenciaDaOpcao.setAttribute("disabled", "");
+      ReferenciaDaOpcao.classList.add("disable");
+    } else {
+      ReferenciaDaOpcao.classList.remove("disable");
+      ReferenciaDaOpcao.removeAttribute("disabled");
     }
   });
 });
