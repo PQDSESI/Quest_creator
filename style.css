@@ -4,6 +4,7 @@
   --preto: rgb(97, 81, 81);
   --verde: rgb(38, 159, 4);
   --vermelho: rgb(190, 20, 20);
+  --cinza: rgb(105, 107, 112);
 }
 body {
   color: var(--preto);
@@ -25,8 +26,10 @@ h2 {
   font-family: var(--fonte), sans-serif;
 }
 .opcoes {
+  display: flex;
   font-size: 15px;
   margin-top: 0.5em;
+  gap: 4px;
 }
 
 .gabarito-box {
@@ -47,7 +50,13 @@ h2 {
   font-weight: 700;
 }
 
-.opcoes input {
+.apagaopcao {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.opcoes input[type="radio"] {
   appearance: none; /* Remove aparência padrão */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -58,6 +67,12 @@ h2 {
   border-radius: 4px; /* Bordas levemente arredondadas (0 para quadrado perfeito) */
   background-color: #fff;
 }
+
+.vazio-box:hover .apagaopcao {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .opcoes input:checked {
   background-color: black;
 }
@@ -147,4 +162,23 @@ input[type="text"] {
   h1 {
     font-size: 50px;
   }
+}
+
+.disable {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.vazio-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+
+.containerdeopcaoetitulo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 2px;
 }
