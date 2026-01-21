@@ -19,8 +19,10 @@ for (let i = numinicio, j = numfim; i <= j; i++) {
   bloco.style.marginBottom = "15px";
 
   bloco.innerHTML = `
-            <strong>Questão ${i}</strong><br>
+           <div class = "opcoes-wrapp">
+            
             <div class="opcoesecontainer">
+            <strong>Questão ${i}</strong><br>
             <div class="opcoes">
 
             <div class="vazio-box">
@@ -60,6 +62,18 @@ for (let i = numinicio, j = numfim; i <= j; i++) {
 
             </div>
             <div class="banner-questoes"><p id="T-${i}"></p></div>
+
+            </div>
+            <div class="avaliadordequestoes" >
+              <label for="motivosdeerro"></label>
+              <select class = "inputdeerro" id="AVL-${i}" name="erro" required>
+              <option>#</option>
+              <option value="atencao">💭</option>
+                <option value="conteudo">🤔</option>
+                <option value="dificuldade">👺</option>
+                <option value="anulada">X</option>
+              </select>
+          </div>
             </div>
 
     
@@ -85,17 +99,21 @@ function gerarTexto(dados, dadosquestao) {
   texto += "--------------------------------\n";
 
   dadosquestao.forEach((r) => {
-    texto += `Q${r.questao} | Marcada: ${r.marcada} | Correta: ${r.correta ? r.correta : "-"} | ${r.resultado}\n`;
+    texto += `Q${r.questao} | Marcada: ${r.marcada} | Correta: ${r.correta ? r.correta : "-"} | ${r.resultado} | ${r.motivoERRO === null ? "" : r.motivoERRO} \n`;
   });
 
   const acertos = dadosquestao.filter((r) => r.resultado === "V").length;
+  const revisar = dadosquestao.filter((r) => r.motivoERRO === "dificuldade");
+  const revisarnumeros = revisar.map((r)=> r.questao)
 
-  texto += `Resultado final: ${acertos} / ${dadosquestao.length}\n`;
+  texto += `\nResultado final: ${acertos} / ${dadosquestao.length}\n\n`;
+  texto += `Rever questões ${revisarnumeros}\n`;
 
   return texto;
 }
 
 function baixarTXT(texto, nome) {
+  
   const blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
 
@@ -106,6 +124,8 @@ function baixarTXT(texto, nome) {
 
   URL.revokeObjectURL(url);
 }
+
+
 
 document
   .getElementById("form-questoes")
@@ -118,19 +138,47 @@ document
       const marcada = document.querySelector(`input[name="q${T}"]:checked`);
       const respostaUsuario = marcada ? marcada.value : "-";
       const correta = dados.gabarito[i - 1];
+      let motivodeerro = document.querySelector(`select[id="AVL-${T}"]`).value
+      let confirmacao;
+      if (respostaUsuario === correta) {
+      confirmacao = "v" 
+      }if(motivodeerro === 'anulada'){confirmacao="V"}
+      else{ confirmacao = "F"}
+
+      switch (motivodeerro) {
+        case "anulada":
+          motivodeerro = "Anulada";
+          break;
+        case "atencao":
+          motivodeerro = "Atenção";
+          break;
+        case "dificuldade":
+          motivodeerro = "Dificuldade";
+          break;
+        case "conteudo":
+          motivodeerro = "Conteúdo";
+          break;
+        case "#":
+          motivodeerro = null;
+          break;
+        default:
+          break;
+      }
 
       dadosquestao.push({
         questao: T,
         marcada: respostaUsuario,
         correta: correta,
-        resultado: respostaUsuario === correta ? "V" : "F",
+        resultado: confirmacao,
+        motivoERRO: motivodeerro
       });
     }
-
+    console.log(dadosquestao)
     const nome = `${dados.data} - (${dados.nivel}) ${dados.materia} ${dados.lista}.txt`;
     const textofeito = gerarTexto(dados, dadosquestao);
     baixarTXT(textofeito, nome);
   });
+
 
 const Passa = document.getElementById("PassaGabarito");
 const Volta = document.getElementById("VoltaGabarito");
@@ -176,14 +224,19 @@ inputs.forEach((input) => {
       `input[name="q${NumeroId}"]:checked`
     ).value;
     const box = document.getElementById(`T-${NumeroId}`);
-    console.log(box);
+    const indicadordeerro = document.getElementById(`AVL-${NumeroId}`);
+  
     if (GabaritoDaMarcada === selecionada) {
       box.setAttribute("class", "certa");
       box.textContent = `Você acertou, a resposta era ${GabaritoDaMarcada}`;
+      indicadordeerro.style.display = "none";
     } else {
       box.setAttribute("class", "errada");
       box.textContent = `Você errou, a resposta era ${GabaritoDaMarcada} `;
+      indicadordeerro.style.display="block"
     }
+
+
   });
 });
 
@@ -204,3 +257,4 @@ NInputs.forEach((NInput) => {
     }
   });
 });
+
