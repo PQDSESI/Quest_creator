@@ -165,7 +165,7 @@ input[type="text"] {
 }
 
 .disable {
-  cursor: not-allowed;
+  cursor: pointer;
   opacity: 0.5;
 }
 
@@ -181,4 +181,25 @@ input[type="text"] {
   align-items: center;
   gap: 2px;
   margin-bottom: 2px;
+}
+
+.opcoes-wrapp {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1em;
+}
+.inputdeerro {
+  display: none;
+  width: 30px;
+  height: 30px;
+  border: solid black;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none; /* Chrome, Safari */
+  -moz-appearance: none;
+  text-align: center;
+  color: black;
+  font-weight: 800;
+  font-size: 1vw;
 }
