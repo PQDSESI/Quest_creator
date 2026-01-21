@@ -1,5 +1,6 @@
 const dados = JSON.parse(sessionStorage.getItem("dadosLista"));
 
+
 if (!dados) {
   alert("Dados da lista não encontrados.");
   window.location.href = "index.html";
@@ -103,7 +104,7 @@ function gerarTexto(dados, dadosquestao) {
   });
 
   const acertos = dadosquestao.filter((r) => r.resultado === "V").length;
-  const revisar = dadosquestao.filter((r) => r.motivoERRO === "dificuldade");
+  const revisar = dadosquestao.filter((r) => r.motivoERRO === "Dificuldade");
   const revisarnumeros = revisar.map((r)=> r.questao)
 
   texto += `\nResultado final: ${acertos} / ${dadosquestao.length}\n\n`;

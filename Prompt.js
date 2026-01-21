@@ -1,3 +1,7 @@
+const data = document.querySelector('#data');
+const hoje = new Date().toISOString().split("T")[0];
+data.value = hoje;
+
 document
   .getElementById("form-descricao")
   .addEventListener("submit", function (e) {
