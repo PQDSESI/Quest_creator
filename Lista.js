@@ -141,10 +141,10 @@ document
       const correta = dados.gabarito[i - 1];
       let motivodeerro = document.querySelector(`select[id="AVL-${T}"]`).value
       let confirmacao;
-      if (respostaUsuario === correta) {
-      confirmacao = "v" 
-      }if(motivodeerro === 'anulada'){confirmacao="V"}
-      else{ confirmacao = "F"}
+
+      if (respostaUsuario === "-" || correta || motivodeerro === "anulada") {
+        confirmacao = "V";
+      } else{ confirmacao = "F"}
 
       switch (motivodeerro) {
         case "anulada":
@@ -165,7 +165,7 @@ document
         default:
           break;
       }
-
+console.log(dadosquestao)
       dadosquestao.push({
         questao: T,
         marcada: respostaUsuario,
@@ -174,7 +174,6 @@ document
         motivoERRO: motivodeerro
       });
     }
-    console.log(dadosquestao)
     const nome = `${dados.data} - (${dados.nivel}) ${dados.materia} ${dados.lista}.txt`;
     const textofeito = gerarTexto(dados, dadosquestao);
     baixarTXT(textofeito, nome);
