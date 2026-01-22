@@ -201,5 +201,5 @@ input[type="text"] {
   text-align: center;
   color: black;
   font-weight: 800;
-  font-size: 1vw;
+  font-size: 100%;
 }
