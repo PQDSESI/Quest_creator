@@ -1,0 +1,27 @@
+:root {
+    --fonte: "BBH Bogle";
+    --fonte2: "Montserrat";
+    --preto: rgb(97, 81, 81);
+    --verde: rgb(38, 159, 4);
+    --vermelho: rgb(190, 20, 20);
+    --cinza: rgb(105, 107, 112);
+  }
+  body {
+    color: var(--preto);
+  }
+  
+  .tit {
+    display: flex;
+    justify-content: center;
+  }
+  
+  h1 {
+    margin:
+      0,
+      5em 0;
+    font-family: var(--fonte), sans-serif;
+  }
+  
+  h2 {
+    font-family: var(--fonte), sans-serif;
+  }

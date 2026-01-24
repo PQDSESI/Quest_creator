@@ -1,0 +1,25 @@
+@import url(./Global.css);
+@import url(./Opcoes.css);
+@import url(./Reset.css);
+@import url(./Formulario.css);
+@import url(./Banner.css);
+
+
+
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  .formulario {
+    width: 50%;
+  }
+  legend {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+}
+
+
