@@ -1,5 +1,8 @@
 import { dados, numinicio, numfim, container } from "./Constantes.js";
 
+   // <div name ="Descriçãodaquestão" class="Descricaodaquestao" >
+   //<button id="D-${i}">Descreva Seu Erro</button>
+   //</div>
 
 
 function Cabeçalho() {
@@ -14,6 +17,9 @@ function criarquestao() {
     bloco.innerHTML = `
            <div class = "opcoes-wrapp">
             
+
+            </div>
+
             <div class="opcoesecontainer">
             <strong>Questão ${i}</strong><br>
             <div class="opcoes">
@@ -57,6 +63,7 @@ function criarquestao() {
             <div class="banner-questoes"><p id="T-${i}"></p></div>
 
             </div>
+
             <div class="avaliadordequestoes" >
               <label for="motivosdeerro"></label>
               <select class = "inputdeerro" id="AVL-${i}" name="erro" required>
@@ -67,6 +74,8 @@ function criarquestao() {
                 <option value="anulada">X</option>
               </select>
           </div>
+
+      
             </div>
 
     
