@@ -1,0 +1,36 @@
+
+fieldset {
+  border: solid var(--preto);
+  color: var(--preto);
+  font-family: var(--fonte2);
+  font-size: 12px;
+  margin-bottom: 1em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.125em;
+}
+.nivel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}
+.submit-t {
+  font-family: var(--fonte);
+  width: 45%;
+  border: solid var(--preto);
+  margin: 0.25em 0;
+}

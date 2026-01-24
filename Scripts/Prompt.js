@@ -2,6 +2,7 @@ const data = document.querySelector('#data');
 const hoje = new Date().toISOString().split("T")[0];
 data.value = hoje;
 
+
 document
   .getElementById("form-descricao")
   .addEventListener("submit", function (e) {
@@ -31,5 +32,8 @@ document
     sessionStorage.setItem("dadosLista", JSON.stringify(dadosLista));
 
     // vai para a página das questões
-    window.location.href = "./Lista.html";
+    window.location.href = "../Htmls/Lista.html";
   });
+
+
+

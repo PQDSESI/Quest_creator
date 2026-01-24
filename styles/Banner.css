@@ -1,0 +1,32 @@
+
+.vazio-box:hover .apagaopcao {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.opcoes input:checked {
+  background-color: black;
+}
+
+.banner-questoes {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-questoes p {
+  display: inline-block;
+  font-family: var(--fonte2), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.gabarito-box button {
+  border: 2px solid var(--preto);
+}
+
+.gabarito-box button:hover {
+  background-color: var(--preto);
+}
