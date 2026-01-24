@@ -16,7 +16,7 @@ export default function gerarTexto(dados, dadosquestao) {
   });
 
   const acertos = dadosquestao.filter((r) => r.resultado === "V").length;
-  const revisar = dadosquestao.filter((r) => r.motivoERRO === "Dificuldade");
+  const revisar = dadosquestao.filter((r) => r.motivoERRO === "Dificuldade" || "Conteudo");
   const revisarnumeros = revisar.map((r) => r.questao);
 
   texto += `\nResultado final: ${acertos} / ${dadosquestao.length}\n\n`;

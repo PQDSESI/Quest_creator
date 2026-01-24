@@ -19,11 +19,15 @@ function SubmeterFormulario() {
         ).value;
         let confirmacao;
 
-        if (respostaUsuario === "-" || correta || motivodeerro === "anulada") {
+        if (respostaUsuario === correta || motivodeerro === "anulada") {
           confirmacao = "V";
         } else {
           confirmacao = "F";
         }
+        if(respostaUsuario === "-"){
+          confirmacao = "-"
+        }
+
 
         switch (motivodeerro) {
           case "anulada":
