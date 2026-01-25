@@ -32,7 +32,7 @@ document
     sessionStorage.setItem("dadosLista", JSON.stringify(dadosLista));
 
     // vai para a página das questões
-    window.location.href = "Quest_creator/Htmls/Lista.html";
+    window.location.href = "/Quest_creator/Htmls/Lista.html";
   });
 
 
