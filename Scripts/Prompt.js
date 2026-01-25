@@ -34,6 +34,3 @@ document
     // vai para a página das questões
     window.location.href = "./Lista.html";
   });
-
-
-
