@@ -24,11 +24,16 @@ input[type="text"] {
   width: 100%;
 }
 
+.submit-t:hover{
+  background-color: var(--preto);
+}
+
 .submit {
   display: flex;
   justify-content: center;
 }
 .submit-t {
+  color: black;
   font-family: var(--fonte);
   width: 45%;
   border: solid var(--preto);
