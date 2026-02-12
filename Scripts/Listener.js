@@ -54,7 +54,7 @@ function SubmeterFormulario() {
           marcada: respostaUsuario,
           correta: correta,
           resultado: confirmacao,
-          motivoERRO: motivodeerro,
+          motivoERRO: respostaUsuario === correta ? null : motivodeerro ,
         });
       }
       const nome = `${dados.data} - (${dados.nivel}) ${dados.materia} ${dados.lista}.txt`;
