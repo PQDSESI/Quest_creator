@@ -1,6 +1,9 @@
+import "./abrefechacaderno.js";
+
 const data = document.querySelector('#data');
 const hoje = new Date().toISOString().split("T")[0];
 data.value = hoje;
+
 
 
 document

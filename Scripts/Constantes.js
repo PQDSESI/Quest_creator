@@ -7,7 +7,6 @@ const TamanhoDoGabarito = dados.gabarito.length;
 const Passa = document.getElementById("PassaGabarito");
 const Volta = document.getElementById("VoltaGabarito");
 const ExcluirERetornar = document.getElementById("ExcluirERetornar");
-
 export {
   container,
   numinicio,
@@ -17,5 +16,5 @@ export {
   TamanhoDoGabarito,
   Passa,
   Volta,
-  ExcluirERetornar
+  ExcluirERetornar,
 };

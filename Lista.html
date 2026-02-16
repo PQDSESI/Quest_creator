@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet">
-
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     </head>
 <body>
     <section class=" formulario">
@@ -29,15 +29,32 @@
 <fieldset class="questoes-grade">
         <div class="questoes-container" id="questoes-container"></div>
     </fieldset>
-    <div class="submit">
-    <button class="submit-t type="submit">Finalizar</button>
+    <div class="submit" >
+    <button class="submit-t"  type="submit">Finalizar</button>
     </div>
 </form>
 <div class="submit">
     <button style=":hover{background-color: white;}"  class="submit-t" id="ExcluirERetornar"><a href="../index.html" >excluir e retornar</a></button>   
 </div>
+
 </section>
+
+<dialog id="Descriçãodaquestao-dialog">
+    <form  id="Descriçãodaquestao-form" method="dialog">
+      <section>
+        <div id="editor">
+        </div>
+      </section>
+        <menu>
+            <button id="cancel" type="reset">Cancel</button>
+            <button type="submit">Confirm</button>
+        </menu>
+    </form>
+  </dialog>
+
     <script defer type="module" src="../Scripts/Lista.js"></script>
     <script defer src="../Scripts/Prompt.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+   
     </body>
 </html>

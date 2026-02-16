@@ -1,6 +1,7 @@
 :root {
     --fonte: "BBH Bogle";
     --fonte2: "Montserrat";
+    --fonte3: ""Abril Fatface"";
     --preto: rgb(97, 81, 81);
     --verde: rgb(38, 159, 4);
     --vermelho: rgb(190, 20, 20);
@@ -9,8 +10,12 @@
   body {
     color: var(--preto);
   }
-  
-  .tit {
+
+  * {
+    box-sizing: border-box;
+}
+
+  .tit {  
     display: flex;
     justify-content: center;
   }

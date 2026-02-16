@@ -1,0 +1,170 @@
+/* ================= RESET E BASE ================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 4vw;
+}
+
+/* ================= BOTÕES NOTEBOOK ================= */
+
+.notebook button {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.notebook button:hover{
+    background-color: var(--preto);
+}
+
+.notebook button img {
+    width: 90%;
+}
+
+/* ================= OVERLAY ================= */
+
+.notebook-view{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* ================= WRAPP (MOBILE BASE) ================= */
+
+.notebook-view-wrapp {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    overflow: auto;
+    border-radius: 0;
+}
+
+/* ================= INFORMATION ================= */
+
+.notebook-view-information {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.notebook-view-information h1 {
+    font-family: "Abril Fatface", serif;
+    font-weight: 600;
+}
+
+.notebook-view-information div{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--preto);
+    border-radius: 8px;
+    padding: 1em;
+    font-size: 16px;
+}
+
+.notebook-view-information div p {
+    margin: 0;
+    line-height: 20px;
+    font-family: "Abril Fatface", serif;
+    font-weight: 600;
+}
+
+/* ================= MAIN ================= */
+
+.notebook-view-main {
+    margin-top: 1.5em;
+    border: 2px solid var(--preto);
+    border-radius: 8px;
+    padding: 1em;
+    font-family: "Abril Fatface", serif;
+    font-weight: 200;
+    overflow: auto;
+}
+
+.notebook-view-main p {
+    line-height: 20px;
+}
+
+/* ================= BUTTONS FOOTER ================= */
+
+.notebook-view-buttons{
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding: 1em 0;
+}
+
+.notebook-view-buttons button {
+    width: 50px;
+    height: 50px;
+    background-color: var(--preto);
+    border: 2px solid var(--preto);
+    border-radius: 8px;
+}
+
+.notebook-view-buttons button:hover {
+    background-color: white;
+}
+
+/* ================= TABLET (≥768px) ================= */
+
+@media (min-width: 768px){
+
+    .notebook-view-wrapp {
+        width: 80%;
+        height: 90%;
+        border-radius: 8px;
+        padding: 2em;
+    }
+
+    .notebook-view-information {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .notebook-view-information div {
+        width: 60%;
+    }
+
+    .notebook-view-main{
+        margin-top: 2em;
+    }
+
+    .notebook-view-buttons{
+        gap: 3em;
+    }
+
+    .notebook-view-buttons button {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* ================= DESKTOP (≥1024px) ================= */
+
+@media (min-width: 1024px){
+
+    .notebook-view-wrapp {
+        width: 50%;
+    }
+
+    .header{
+        margin: 0 2vw;
+    }
+}

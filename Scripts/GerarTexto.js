@@ -24,3 +24,4 @@ export default function gerarTexto(dados, dadosquestao) {
 
   return texto;
 }
+
