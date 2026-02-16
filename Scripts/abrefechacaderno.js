@@ -1,4 +1,4 @@
-import { caderno,Exit,Deletar,Editar,Retornar,Prosseguir,notebook } from "./constantes01.js";
+import { caderno,Exit,Deletar,Editar,Retornar,Prosseguir,notebook } from "./Constantes.js";
 import { PlotarCaderno,ExcluirTextos } from "./PlotarCaderno.js";
 let Contador = 0
 let Notas = JSON.parse(localStorage.getItem("Notas")) || [];
