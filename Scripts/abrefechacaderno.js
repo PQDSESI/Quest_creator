@@ -1,14 +1,14 @@
-import { caderno,Exit,Deletar,Editar,Retornar,Prosseguir,notebook } from "./Constantes.js";
+import { Caderno,Exit,Deletar,Editar,Retornar,Prosseguir,notebook } from "./Constantes01.js";
 import { PlotarCaderno,ExcluirTextos } from "./PlotarCaderno.js";
 let Contador = 0
 let Notas = JSON.parse(localStorage.getItem("Notas")) || [];
 let QdtsdeTextos = Notas.length;
 notebook.onclick = () => {
     PlotarCaderno(Contador);
-    caderno.style.display = "flex"
+    Caderno.style.display = "flex"
 }
 Exit.onclick = () => {
-    caderno.style.display = "none";
+    Caderno.style.display = "none";
     Contador = 0
 }
 
@@ -30,7 +30,7 @@ Deletar.onclick = () => {
     }
 
     if (QdtsdeTextos === 0) {
-      caderno.style.display = "none";
+      Caderno.style.display = "none";
       return;
     }
 

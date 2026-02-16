@@ -3,14 +3,14 @@ const Editar = document.getElementById("notebook-view-edit");
 const Exit = document.getElementById("notebook-view-exit");
 const Retornar = document.getElementById("notebook-view-return");
 const Prosseguir = document.getElementById("notebook-view-proceed");
-const caderno = document.getElementById("notebook-view");
-const notebook = document.getElementById("notebook")
+const Caderno = document.getElementById("notebook-view");
+const Notebook = document.getElementById("notebook")
 export{
     Deletar,
     Editar,
-    caderno,
+    Caderno,
     Exit,
     Retornar,
     Prosseguir,
-    notebook
+    Notebook
 }
