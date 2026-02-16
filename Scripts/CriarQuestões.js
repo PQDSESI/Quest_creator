@@ -1,25 +1,23 @@
 import { dados, numinicio, numfim, container } from "./Constantes.js";
 
-   // <div name ="Descriçãodaquestão" class="Descricaodaquestao" >
-   //<button id="D-${i}">Descreva Seu Erro</button>
-   //</div>
 
 
 function Cabeçalho() {
   document.getElementById("infoLista").innerText =
-    `${dados.materia} - ${dados.lista} - ${dados.tipoLista} - ${dados.nivel}`;
+  `${dados.materia} - ${dados.lista} - ${dados.tipoLista} - ${dados.nivel}`;
 }
 function criarquestao() {
   for (let i = numinicio, j = numfim; i <= j; i++) {
     const bloco = document.createElement("div");
     bloco.style.marginBottom = "15px";
+    
 
     bloco.innerHTML = `
            <div class = "opcoes-wrapp">
-            
 
-            </div>
-
+          <menu class="DescricaoDaQuestao-wrapp">
+        <button class="DescricaoDaQuestao" id="DE-${i}" type="button" ><img src="../img/Descricão da questão.png"></button>
+          </menu>
             <div class="opcoesecontainer">
             <strong>Questão ${i}</strong><br>
             <div class="opcoes">

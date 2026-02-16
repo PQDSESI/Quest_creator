@@ -3,7 +3,10 @@
 @import url(./Reset.css);
 @import url(./Formulario.css);
 @import url(./Banner.css);
-@import url(./Descricao.css);
+@import url(./Descrição.css);
+@import url(./Caderno.css);
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 
 @media screen and (min-width: 1024px) {
@@ -13,6 +16,7 @@
   }
   .formulario {
     width: 50%;
+    
   }
   legend {
     font-size: 15px;

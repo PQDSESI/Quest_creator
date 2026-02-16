@@ -1,6 +1,7 @@
 import gerarTexto from "./GerarTexto.js";
 import baixarTXT from "./BaixarTexto.js";
 import { numinicio, numfim,dados } from "./Constantes.js";
+import { GuardarAnotacoes } from "./CriarTextosdescrições.js";
 
 function SubmeterFormulario() {
   document
@@ -47,8 +48,7 @@ function SubmeterFormulario() {
             break;
           default:
             break;
-        }
-        console.log(dadosquestao);
+        };
         dadosquestao.push({
           questao: T,
           marcada: respostaUsuario,
@@ -60,6 +60,7 @@ function SubmeterFormulario() {
       const nome = `${dados.data} - (${dados.nivel}) ${dados.materia} ${dados.lista}.txt`;
       const textofeito = gerarTexto(dados, dadosquestao);
       baixarTXT(textofeito, nome);
+      GuardarAnotacoes()
     });
 }
 

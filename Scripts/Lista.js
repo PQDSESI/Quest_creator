@@ -1,10 +1,13 @@
 import {criarquestao, Cabeçalho} from "./CriarQuestões.js"
 import { SubmeterFormulario } from "./Listener.js";
 import { PassaGabarito, VoltaGabarito, PutText } from "./PassarGabarito.js";
-import { numinicio, Passa, Volta, ExcluirERetornar, dados } from "./Constantes.js";
+import { numinicio, Passa, Volta, ExcluirERetornar, dados} from "./Constantes.js";
 import BannerDeQuestao from "./BannerDeAcerto.js";
 import AnularOpcao from "./AnularOpcao.js";
-
+import "./Quillconfig.js";
+import "./Descricao.js";
+import { inserinumerodaquestaonotexto } from "./Quillconfig.js";
+import "./PlotarCaderno.js";
 
 ExcluirERetornar.onclick = () => {
   sessionStorage.clear();
@@ -25,5 +28,8 @@ criarquestao();
 BannerDeQuestao();
 PutText(numinicio);
 AnularOpcao();
+inserinumerodaquestaonotexto();
+
+
 
 
